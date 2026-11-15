@@ -1,0 +1,36 @@
+@import "@fontsource-variable/fraunces/wght.css";
+@import "@fontsource/atkinson-hyperlegible/400.css";
+@import "@fontsource/atkinson-hyperlegible/700.css";
+@import "leaflet/dist/leaflet.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { --font-display: "Fraunces Variable", Georgia, serif; --font-body: "Atkinson Hyperlegible", system-ui, sans-serif; }
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-sand text-ink font-sans text-base leading-relaxed antialiased; }
+  h1, h2, h3 { @apply font-display font-bold leading-tight text-ink; }
+  h1 { @apply text-4xl md:text-5xl; }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-xl; }
+  :focus-visible { outline: 3px solid #F2A93B; outline-offset: 2px; }
+  a { @apply text-river underline underline-offset-2; }
+}
+
+@layer components {
+  .btn { @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl px-5 py-2 font-bold no-underline transition-colors; }
+  .btn-primary { @apply btn bg-river text-white hover:bg-river-dark; }
+  .btn-secondary { @apply btn border-2 border-river bg-white text-river hover:bg-river-light; }
+  .btn-sun { @apply btn bg-sun text-ink hover:brightness-95; }
+  .btn-danger { @apply btn bg-clay text-white hover:bg-clay-dark; }
+  .card { @apply rounded-card border border-ink/10 bg-white p-6; }
+  .field { @apply w-full min-h-[48px] rounded-xl border border-ink/30 bg-white px-3 py-2 text-ink; }
+  .label { @apply mb-1 block font-bold; }
+  .container-x { @apply mx-auto w-full max-w-6xl px-4 sm:px-6; }
+  .badge { @apply inline-block rounded-full px-3 py-0.5 text-sm font-bold; }
+}
+
+.leaflet-container { font-family: var(--font-body); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; animation: none !important; transition: none !important; } }
