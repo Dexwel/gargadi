@@ -1,20 +1,15 @@
 "use client";
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { MapContainer, TileLayer, Circle, Popup, CircleMarker } from "react-leaflet";
 import { site } from "@/config/site";
+import { simulatedZones } from "@/lib/zones";
 
-type Zone = { id: number; kind: "flood" | "disease"; level: "low" | "medium" | "high"; name: string; lat: number; lng: number; radius_m: number };
 const COLORS = { low: "#2F7D4F", medium: "#F2A93B", high: "#C2410C" } as const;
 const LABEL = { low: "Low", medium: "Medium", high: "High" } as const;
 
 export default function RiskMap({ height = 420 }: { height?: number }) {
-  const [zones, setZones] = useState<Zone[]>([]);
   const [kind, setKind] = useState<"flood" | "disease">("flood");
-
-  useEffect(() => {
-    fetch("/api/zones").then((r) => r.json()).then((j) => setZones(j.zones ?? [])).catch(() => setZones([]));
-  }, []);
-  const shown = useMemo(() => zones.filter((z) => z.kind === kind), [zones, kind]);
+  const shown = useMemo(() => simulatedZones.filter((z) => z.kind === kind), [kind]);
 
   return (
     <div>

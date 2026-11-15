@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero, Section } from "@/components/Bits";
+import { site } from "@/config/site";
 import { Logo, LogoIcon } from "@/components/Logo";
 
 export const metadata: Metadata = { title: "Brand" };
@@ -30,7 +31,7 @@ export default function Brand() {
           <div className="card flex min-h-[140px] items-center justify-center"><Logo /></div>
           <div className="card flex min-h-[140px] items-center justify-center"><LogoIcon size={72} /></div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <div className="card flex min-h-[140px] items-center justify-center"><img src="/assets/logo-mono.svg" alt="Gargadi monochrome logo" width={200} height={50} /></div>
+          <div className="card flex min-h-[140px] items-center justify-center"><img src={`${site.basePath}/assets/logo-mono.svg`} alt="Gargadi monochrome logo" width={200} height={50} /></div>
         </div>
         <p className="mt-2 text-sm text-mist">Primary, icon-only, monochrome. Files in /assets.</p>
       </Section>

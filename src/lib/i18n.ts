@@ -8,22 +8,13 @@ import type { Lang } from "./messages";
 
 export const dict = {
   en: {
-    "nav.home": "Home", "nav.problem": "The Problem", "nav.how": "How it works", "nav.demo": "Live demo",
+    "nav.home": "Home", "nav.problem": "The Problem", "nav.how": "How it works", "nav.demo": "Simulated demo",
     "nav.impact": "Impact", "nav.voices": "Voices & partners", "nav.about": "About", "nav.contact": "Contact",
     "banner": "Prototype. Data shown is simulated.",
     "hero.title": "Know early. Act early.",
     "hero.sub": "Gargadi sends short flood and disease warnings to families in the language they speak. Before the water comes. Before the fever spreads.",
     "cta.demo": "Try the demo",
     "cta.how": "See how it works",
-    "signup.title": "Register for alerts",
-    "signup.name": "Your name (optional)",
-    "signup.phone": "Phone number",
-    "signup.community": "Community",
-    "signup.language": "Language",
-    "signup.format": "Message type",
-    "signup.channel": "Channel",
-    "signup.submit": "Register",
-    "signup.consent": "I agree that Gargadi may store my phone number and send me flood and health alerts. I can ask to be deleted at any time.",
     "sim.title": "Alert simulator",
   },
   ha: {
@@ -32,7 +23,6 @@ export const dict = {
     "banner": "Samfurin gwaji. Bayanan da aka nuna na kwaikwayo ne. [REVIEW]",
     "hero.title": "Ku sani da wuri. Ku ɗauki mataki da wuri. [REVIEW]",
     "cta.demo": "Gwada samfurin [REVIEW]",
-    "signup.title": "Yi rajista don samun gargaɗi [REVIEW]",
   },
   kr: {
     // REVIEW: no Kanuri strings yet. Falls back to English until a native speaker supplies them.

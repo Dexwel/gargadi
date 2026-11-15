@@ -1,16 +1,12 @@
 /** @type {import('next').NextConfig} */
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+
 const nextConfig = {
+  output: "export",
+  basePath: isGitHubPages ? "/gargadi" : "",
+  trailingSlash: true,
+  images: { unoptimized: true },
   reactStrictMode: true,
   poweredByHeader: false,
-  headers: async () => [
-    {
-      source: "/(.*)",
-      headers: [
-        { key: "X-Content-Type-Options", value: "nosniff" },
-        { key: "X-Frame-Options", value: "DENY" },
-        { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-      ],
-    },
-  ],
 };
 export default nextConfig;

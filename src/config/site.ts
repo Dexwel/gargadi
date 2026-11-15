@@ -7,9 +7,8 @@ export const site = {
   tagline: "Know early. Act early.",
   description:
     "Gargadi is a community early warning initiative for flood and disease risk in Yobe State, Nigeria. Prototype.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000"),
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
   contactEmail: "[ADD CONTACT EMAIL]",
   pilot: {
     name: "[PILOT COMMUNITY]",

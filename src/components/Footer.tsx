@@ -10,11 +10,11 @@ export function Footer() {
           <p className="mt-4 text-sm text-sun">Prototype. Nothing on this site is live. Demo data is simulated.</p>
         </div>
         <nav aria-label="Footer" className="grid grid-cols-2 gap-2 text-white">
-          {[["/problem", "The Problem"], ["/how-it-works", "How it works"], ["/demo", "Live demo"], ["/impact", "Impact & roadmap"], ["/voices", "Voices & partners"], ["/about", "About"], ["/contact", "Contact"], ["/brand", "Brand"], ["/privacy", "Privacy"]].map(([h, l]) => (
+          {[["/problem", "The Problem"], ["/how-it-works", "How it works"], ["/demo", "Simulated demo"], ["/impact", "Impact & roadmap"], ["/voices", "Voices & partners"], ["/about", "About"], ["/contact", "Contact"], ["/brand", "Brand"], ["/privacy", "Privacy"]].map(([h, l]) => (
             <Link key={h} href={h} className="text-white underline-offset-2 hover:text-sun">{l}</Link>
           ))}
         </nav>
-        <p className="text-sm text-white/70">Built to follow the principles of the Nigeria Data Protection Act 2023: collect the minimum, ask for consent, allow deletion.</p>
+        <p className="text-sm text-white/70">Any future pilot should follow the Nigeria Data Protection Act 2023: collect the minimum, ask for consent, allow deletion.</p>
       </div>
     </footer>
   );
