@@ -26,11 +26,11 @@ npm run dev
 
 Open `http://localhost:3000`. To create the static export locally, run `npm run build`; the output is written to `out/`.
 
-## Deploy to GitHub Pages
+## Deploy to Netlify
 
-The GitHub Actions workflow deploys the static export from the `main` branch. Follow [DEPLOY.md](./DEPLOY.md) once to enable Pages for the repository. The public URL is `https://dexwel.github.io/gargadi/`.
+The repository includes [netlify.toml](./netlify.toml) with the static build command and publish directory. Follow [DEPLOY.md](./DEPLOY.md) to import the GitHub repository into Netlify. Netlify will deploy the site on pushes to `main`.
 
-No secrets, database, or environment variables are required for deployment. The build sets the repository subpath automatically.
+No database or secrets are required. Set `NEXT_PUBLIC_SITE_URL` in Netlify after the first deploy so the sitemap and site metadata use the assigned site URL.
 
 ## Editing content
 
@@ -52,4 +52,4 @@ npm run lint
 npm run build
 ```
 
-CI runs the checks on pushes and pull requests. The Pages workflow builds and publishes the site on pushes to `main`.
+GitHub Actions runs checks on pushes and pull requests. Netlify builds and publishes the site from the connected GitHub branch.

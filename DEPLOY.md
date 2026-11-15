@@ -1,37 +1,35 @@
-# Deploy Gargadi to GitHub Pages
+# Deploy Gargadi to Netlify
 
-This version is a static site: it needs no database, credentials, or environment variables. GitHub Actions builds and publishes it whenever changes are pushed to `main`.
+This is a static site: it needs no database, credentials, or environment variables to build. Netlify builds the `out/` directory using the settings in `netlify.toml`.
 
-## One-time setup
+## Import from GitHub
 
-1. Open the repository: <https://github.com/Dexwel/gargadi>.
-2. Select **Settings → Pages**.
-3. If the workflow cannot enable Pages automatically, under **Build and deployment**, set **Source** to **GitHub Actions**.
-4. Open **Settings → Actions → General** and ensure Actions are allowed to run. The Pages workflow has the required deploy permissions.
+1. Sign in to [Netlify](https://app.netlify.com/) with GitHub.
+2. Select **Add new project → Import an existing project → GitHub**.
+3. Authorize Netlify to access `Dexwel/gargadi`, then select that repository.
+4. Keep the repository root as the base directory. Netlify reads the build command (`npm run build`) and publish directory (`out`) from `netlify.toml`.
+5. Select **Deploy**.
 
-## Publish
+Netlify assigns a `netlify.app` URL after the first build.
 
-Push changes to the `main` branch, or manually run **Actions → Deploy to GitHub Pages → Run workflow**. The workflow installs dependencies, creates a static export, and deploys it.
+## Set the public site URL
 
-After the first successful workflow, the site is available at:
+After the first deploy:
 
-<https://dexwel.github.io/gargadi/>
+1. In Netlify, open **Project configuration → Environment variables**.
+2. Add `NEXT_PUBLIC_SITE_URL` with the full assigned site URL, for example `https://your-site-name.netlify.app`.
+3. Trigger a new deploy so the sitemap and page metadata use that URL.
 
-It may take a few minutes for the first deployment to appear. Check the **Actions** tab if the workflow reports an error.
+No database connection, secrets, or messaging-provider credentials are needed.
 
-## Local preview
+## Future updates
 
-```bash
-npm ci
-npm run dev
-```
-
-Open <http://localhost:3000>. `npm run build` creates the same kind of static output in `out/`.
+Netlify deploys new production versions when changes are pushed to the connected branch (`main` by default). Pull requests and other branches can get preview deploys.
 
 ## What this static version does not do
 
 - Store registrations, phone numbers, or contact messages
 - Provide an admin dashboard or database
-- Send SMS, WhatsApp, scheduled alerts, or any other real messages
+- Send SMS, WhatsApp, scheduled alerts, or any real messages
 
 The demo map and alert text are simulated. The map loads tiles from OpenStreetMap. Do not collect personal information through this prototype.

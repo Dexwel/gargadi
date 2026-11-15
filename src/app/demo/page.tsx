@@ -22,7 +22,7 @@ export default function Demo() {
       <Section>
         <div className="card">
           <h2>Registration is not enabled</h2>
-          <p className="mt-2 text-ink/80">This GitHub Pages version has no database or sign-up form. The map and alert messages are examples only.</p>
+          <p className="mt-2 text-ink/80">This static version has no database or sign-up form. The map and alert messages are examples only.</p>
         </div>
       </Section>
     </>
