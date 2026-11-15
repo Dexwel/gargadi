@@ -6,7 +6,7 @@ This version is a static site: it needs no database, credentials, or environment
 
 1. Open the repository: <https://github.com/Dexwel/gargadi>.
 2. Select **Settings → Pages**.
-3. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. If the workflow cannot enable Pages automatically, under **Build and deployment**, set **Source** to **GitHub Actions**.
 4. Open **Settings → Actions → General** and ensure Actions are allowed to run. The Pages workflow has the required deploy permissions.
 
 ## Publish
