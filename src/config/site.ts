@@ -47,9 +47,20 @@ export const roadmap = [
   },
 ];
 
-/** Problem-page facts. Only add a figure when you have a real, citable source. */
+/** Verified Yobe flood figures with source periods and links. */
 export const keyFacts = [
-  { value: "[ADD DATA]", label: "People affected by flooding in Yobe in a recent year", source: "[ADD SOURCE, e.g. NEMA / SEMA report]" },
-  { value: "[ADD DATA]", label: "Malaria cases reported in Yobe in a recent year", source: "[ADD SOURCE, e.g. State Ministry of Health]" },
-  { value: "[ADD DATA]", label: "Households that received a warning before the last flood", source: "[ADD SOURCE or your own survey]" },
+  {
+    value: "60,856",
+    label: "people affected by flooding across 17 assessed LGAs",
+    source: "IOM DTM assessment, 4–8 September 2024",
+    sourceTitle: "IOM DTM report",
+    sourceUrl: "https://dtm.iom.int/reports/nigeria-flood-situation-report-yobe-state-13-september-2024",
+  },
+  {
+    value: "5,865+",
+    label: "shelters destroyed in Yobe during the 2024 floods",
+    source: "OCHA Nigeria Flood Overview, as of 17 September 2024",
+    sourceTitle: "OCHA flood overview",
+    sourceUrl: "https://www.unocha.org/publications/report/nigeria/nigeria-flood-overview-17-september-2024",
+  },
 ];

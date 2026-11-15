@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Section, Placeholder, PhaseCard } from "@/components/Bits";
+import { Section, PhaseCard } from "@/components/Bits";
 import { HeroPhone } from "@/components/HeroPhone";
 import { keyFacts, site } from "@/config/site";
 
@@ -25,17 +25,18 @@ export default function Home() {
       </section>
 
       <Section>
-        <h2>The problem, in three facts</h2>
-        <div className="mt-6 grid gap-4 md:grid-cols-3">
+        <h2>Recent flood impact in Yobe</h2>
+        <p className="mt-2 max-w-3xl text-ink/80">Verified figures from humanitarian assessments show the scale of recent flooding. Each figure is dated and linked to its source.</p>
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {keyFacts.map((f) => (
             <div key={f.label} className="card">
-              <p className="font-display text-4xl font-bold text-river"><Placeholder>{f.value}</Placeholder></p>
+              <p className="font-display text-4xl font-bold text-river">{f.value}</p>
               <p className="mt-2">{f.label}</p>
-              <p className="mt-2 text-sm text-mist">Source: {f.source}</p>
+              <p className="mt-2 text-sm text-mist">{f.source}</p>
+              <a className="mt-3 inline-block text-sm font-bold" href={f.sourceUrl}>{f.sourceTitle} →</a>
             </div>
           ))}
         </div>
-        <p className="mt-3 text-sm text-mist">We only publish figures we can cite. Replace each marked placeholder in <code>src/config/site.ts</code>.</p>
       </Section>
 
       <Section>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { PageHero, Section, Cta, Placeholder } from "@/components/Bits";
+import { PageHero, Section, Cta } from "@/components/Bits";
 import { keyFacts } from "@/config/site";
 
 export const metadata: Metadata = { title: "The Problem", description: "Why flood and disease warnings do not reach families in Yobe State in time." };
@@ -29,11 +29,16 @@ export default function Problem() {
         </ul>
       </Section>
       <Section>
-        <h2>Facts we will cite</h2>
-        <p className="mt-2 text-ink/80">These are placeholders until we attach a verified source to each one. We do not publish numbers we cannot cite.</p>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
+        <h2>What recent flood assessments found</h2>
+        <p className="mt-2 text-ink/80">These dated figures describe the impact documented in Yobe during the 2024 floods.</p>
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
           {keyFacts.map((f) => (
-            <div key={f.label} className="card"><p className="font-display text-3xl font-bold"><Placeholder>{f.value}</Placeholder></p><p className="mt-2">{f.label}</p><p className="mt-1 text-sm text-mist">{f.source}</p></div>
+            <div key={f.label} className="card">
+              <p className="font-display text-3xl font-bold text-river">{f.value}</p>
+              <p className="mt-2">{f.label}</p>
+              <p className="mt-1 text-sm text-mist">{f.source}</p>
+              <a className="mt-3 inline-block text-sm font-bold" href={f.sourceUrl}>{f.sourceTitle} →</a>
+            </div>
           ))}
         </div>
         <div className="mt-8"><Cta>See how Gargadi closes the gap</Cta></div>
